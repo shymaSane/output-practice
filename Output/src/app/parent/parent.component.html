@@ -1,0 +1,4 @@
+<h3>Agree:{{agreed}}
+  disagree: {{disagreed}}
+</h3>
+<app-child *ngFor= "let name of names" [name] = "name" onVoted = "onVoted($event)" ></app-child>
