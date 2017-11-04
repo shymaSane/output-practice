@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
+  @Input() name: string;
+  @Output() onVoted = new EventEmitter<boolean>()
+  voted = false;
+
+  vote(agreed:boolean){
+    this.onVoted.emit(agreed)
+    this.voted = true
+  }
+
 
   constructor() { }
 

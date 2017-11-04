@@ -1,3 +1,6 @@
-<p>
-  child works!
-</p>
+
+<h3>{{name}}</h3>
+
+<button (click) = "vote(true)" [disabled] = "voted" >agree</button>
+
+<button (click) = "vote(false)" [disabled] = "voted" >disagree</button>
